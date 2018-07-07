@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
+import telebot
 
-$ heroku ps:scale web=1
+$heroku ps:scale web=1
 
 bot = telebot.TeleBot("607967748:AAGGCS5t8TK7aKxZUeav2sgwcPTmkpVJDls")
 @bot.message_handler(content_types=["text"])
