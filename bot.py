@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 import telebot
-import pyTelegramBotAPI
 
 bot = telebot.TeleBot("607967748:AAGGCS5t8TK7aKxZUeav2sgwcPTmkpVJDls")
 
