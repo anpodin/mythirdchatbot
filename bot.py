@@ -10,6 +10,9 @@ def send_welcome(message):
 @bot.message_handler(func=lambda message: True)
 def echo_all(message):
     cid = message.chat.id
+    if message.text = "Привет":
+    bot.send_message(cid, "Привет! Поговори со мной!")
+    elif:
     bot.send_message(cid, "Ой все! Хватит болтать :-D")
 
-bot.polling(none_stop=True, interval=10, timeout=30)
+bot.polling(none_stop=True)
