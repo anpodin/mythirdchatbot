@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-import telebot
-
 
 bot = telebot.TeleBot("607967748:AAGGCS5t8TK7aKxZUeav2sgwcPTmkpVJDls")
 @bot.message_handler(content_types=["text"])
