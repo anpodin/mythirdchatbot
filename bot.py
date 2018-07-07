@@ -11,4 +11,4 @@ def send_welcome(message):
 def echo_all(message):
     bot.reply_to(message, message.text)
 
-bot.polling(none_stop=False, interval=0, timeout=20)
+bot.polling(none_stop=True, interval=10, timeout=30)
