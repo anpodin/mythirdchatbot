@@ -15,3 +15,15 @@ def handle_text(message):
         bot.send_message(message.from_user.id, "Sorry, i dont understand you.")
 
 bot.polling(none_stop=True, interval=0)
+
+# Обработчик команд '/start' и '/help'.
+@bot.message_handler(commands=['start', 'help'])
+def handle_start_help(message):
+    pass
+
+ # Обработчик для документов и аудиофайлов
+@bot.message_handler(content_types=['document', 'audio'])
+def handle_document_audio(message):
+    pass
+
+bot.polling(none_stop=True, interval=0)
