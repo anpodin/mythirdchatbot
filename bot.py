@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
-.. code:: python
-
 import telebot
 
-bot = telebot.TeleBot("TOKEN")
+bot = telebot.TeleBot("607967748:AAGGCS5t8TK7aKxZUeav2sgwcPTmkpVJDls")
 
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
