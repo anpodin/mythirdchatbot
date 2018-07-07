@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
 import telebot
-token = '607967748:AAGGCS5t8TK7aKxZUeav2sgwcPTmkpVJDls'
-bot = telebot.TeleBot(config.token)
 
+
+bot = telebot.TeleBot("607967748:AAGGCS5t8TK7aKxZUeav2sgwcPTmkpVJDls")
 @bot.message_handler(content_types=["text"])
 def handle_text(message):
-    if message.text == "Привет":
-        bot.send_message(message.from_user.id, "Привет! Я третий бот Андрея. Спроси мена как дела.")
+    if message.text == "Hi":
+        bot.send_message(message.from_user.id, "Hello! I am HabrahabrExampleBot. How can i help you?")
     
-    elif message.text == "Как дела?" or message.text == "How are u?":
-        bot.send_message(message.from_user.id, "Я в порядке! А вы?")
+    elif message.text == "How are you?" or message.text == "How are u?":
+        bot.send_message(message.from_user.id, "I'm fine, thanks. And you?")
     
     else:
-        bot.send_message(message.from_user.id, "Извини, я пока очень глуп. Не понимаю о чем ты. Давай начнем сначала.")
-        
-   bot.polling(none_stop=True, interval=0)
+        bot.send_message(message.from_user.id, "Sorry, i dont understand you.")
+
+bot.polling(none_stop=True, interval=0)
