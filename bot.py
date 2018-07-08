@@ -21,8 +21,8 @@ def echo_all(message):
    cid = message.chat.id
    txt = message.text
    if txt == 'привет':
-   bot.send_message(cid, "Привет! Рад поговорить с тобой! 😋")
+        bot.send_message(cid, "Привет! Рад поговорить с тобой! 😋")
    elif:
-   bot.send_message(cid, "Ой все! Хватит болтать 😆")
+        bot.send_message(cid, "Ой все! Хватит болтать 😆")
 
 bot.polling(none_stop=True)
