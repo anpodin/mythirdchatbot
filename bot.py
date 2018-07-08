@@ -23,7 +23,7 @@ def echo_all(message):
    if txt == 'привет':
         bot.send_message(cid, "Привет! Рад поговорить с тобой! 😋")
    elif txt == 'Как дела?':
-        bot.send_message(cid, "Лучше всех! 👌"
+        bot.send_message(cid, "Лучше всех! 👌")
    else:
         bot.send_message(cid, "Ой все! Хватит болтать 😆")
 
