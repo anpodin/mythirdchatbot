@@ -11,7 +11,7 @@ def send_welcome(message):
 def pong(m):
     bot.reply_to(m, 'Pong!')
     
-@bot.message_handler(commands=['Привет'])  # Отвечаем на Привет
+@bot.message_handler(commands=['привет'])  # Отвечаем на Привет
 def hello(m):
     cid = m.chat.id
     bot.send_message(cid, 'Привет! Рад поговорить с тобой! 😋')
@@ -19,6 +19,10 @@ def hello(m):
 @bot.message_handler(func=lambda message: True)
 def echo_all(message):
    cid = message.chat.id
+   txt = message.text
+   if txt == 'привет':
+   bot.send_message(cid, "Привет! Рад поговорить с тобой! 😋")
+   elif:
    bot.send_message(cid, "Ой все! Хватит болтать 😆")
 
 bot.polling(none_stop=True)
