@@ -1,1 +1,1 @@
-web: python3 bot.py --port=$PORT
+worker: python3 bot.py --port=$PORT
