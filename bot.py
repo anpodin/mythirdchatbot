@@ -28,7 +28,7 @@ def echo_all(message):
         bot.send_message(cid, "Hi! 😋 How are you?")
    else:
         bot.send_message(cid, "Let's get down to business - pls send me an image!📸")
-@errLog
+
 def processPhotoMessage(message):
     cid = message.chat.id
     fileID = message.photo[-1].file_id
