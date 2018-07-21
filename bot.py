@@ -33,7 +33,7 @@ def processPhotoMessage(message):
     cid = message.chat.id
     fileID = message.photo[-1].file_id
     file = bot.get_file(fileID)
-    url = 'https://api.telegram.org/file/bot{0}/{1}'.format(API_TOKEN, file_info.file_path))
+    url = "https://api.telegram.org/bot607967748:AAGGCS5t8TK7aKxZUeav2sgwcPTmkpVJDls/getFile?file_id=" + fileID
     
     import requests
     r = requests.post(
