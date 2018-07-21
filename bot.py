@@ -31,11 +31,11 @@ def echo_all(message):
 
 
 @bot.message_handler(content_types=['photo'])  # This one is to get an image and process it through DeepAI
-def photo(m):
-    pid = m.photo.file_id
+def photo(message):
+    pid = message.photo.file_id
     path = bot.getFile(pid)
     url = "https://api.telegram.org/file/botAAGGCS5t8TK7aKxZUeav2sgwcPTmkpVJDls/" + path
-    cid = m.chat.id
+    cid = message.chat.id
 
     import requests
     r = requests.post(
