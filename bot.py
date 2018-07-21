@@ -27,17 +27,14 @@ def echo_all(message):
    elif txt == 'Hi':
         bot.send_message(cid, "Hi! 😋 How are you?")
    else:
-        bot.send_message(cid, "Let's get down to business - send me an image!📸")
-
-
-@bot.message_handler(content_types=['photo'])  # This one is to get an image and process it through DeepAI
-def photo(message):
-    photoid = telegram.PhotoSize.file_id
-    pfile = bot.getFile(photoid)
-    path = pfile.file_path
-    url = "https://api.telegram.org/file/botAAGGCS5t8TK7aKxZUeav2sgwcPTmkpVJDls/" + path
-    cid = m.chat.id
-
+        bot.send_message(cid, "Let's get down to business - pls send me an image!📸")
+@errLog
+def processPhotoMessage(message):
+    cid = message.chat.id
+    fileID = message.photo[-1].file_id
+    file = bot.get_file(fileID)
+    url = 'https://api.telegram.org/file/bot{0}/{1}'.format(API_TOKEN, file_info.file_path))
+    
     import requests
     r = requests.post(
     "https://api.deepai.org/api/neuraltalk",
@@ -49,5 +46,12 @@ def photo(message):
     talk = (r.json())
     
     bot.send_message(cid, talk)
+
+
+@bot.message_handler(content_types=['photo'])  # This one is to get an image and process it through DeepAI
+def photo(message):
+    processPhotoMessage(message)
+
+    
 
 bot.polling(none_stop=True)
