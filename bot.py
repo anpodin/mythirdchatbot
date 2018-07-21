@@ -32,7 +32,7 @@ def echo_all(message):
 
 @bot.message_handler(content_types=['photo'])  # This one is to get an image and process it through DeepAI
 def photo(m):
-    url = m.file_id
+    url = m.file_path
     cid = m.chat.id
 
     import requests
