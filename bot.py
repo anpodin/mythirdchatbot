@@ -44,10 +44,11 @@ def processPhotoMessage(message):
     },
     headers={'api-key': '104f12a5-1dae-402d-b4b6-bb24b6b501b4'}
     )
+    data = r.json()
     import json
-    talk = r.json(['output'])
-    
-    bot.send_message(cid, talk)
+    talk = json.loads(data, object_hook=lambda d: namedtuple('X', d.keys())(*d.values()))
+
+    bot.send_message(cid, talk.output)
 
 
 @bot.message_handler(content_types=['photo'])  # This one is to get an image and process it through DeepAI
