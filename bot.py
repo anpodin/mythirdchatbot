@@ -45,10 +45,7 @@ def processPhotoMessage(message):
     headers={'api-key': '104f12a5-1dae-402d-b4b6-bb24b6b501b4'}
     )
     import json
-    age =  r.json()['age_range'] 
-    gender = r.json()['gender'] 
-    race = r.json()['cultural_appearance']
-    talk = "Age: " + age + ".  Gender: " + gender + ".  Race: " + race
+    talk =  r.json()['age_range', 'gender', 'cultural_appearance'] 
     bot.send_message(cid, talk)
 
 
