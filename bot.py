@@ -38,14 +38,14 @@ def processPhotoMessage(message):
     
     import requests
     r = requests.post(
-    "https://api.deepai.org/api/neuraltalk",
+    "https://api.deepai.org/api/demographic-recognition",
     data={
         'image': url,
     },
     headers={'api-key': '104f12a5-1dae-402d-b4b6-bb24b6b501b4'}
     )
     import json
-    talk = r.json()['output']
+    talk = "Age: "+r.json()['age_range']\n+"Gender: "r.json()['gender']\n+"Race: "+ r.json()['cultural_appearance']
     
     bot.send_message(cid, talk)
 
