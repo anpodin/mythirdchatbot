@@ -31,6 +31,7 @@ def echo_all(message):
 
 def processPhotoMessage(message):
     cid = message.chat.id
+    bot.send_message(cid, "OK, let me check...")
     fileID = message.photo[-1].file_id
     file = bot.get_file(fileID)
     path = file.file_path
